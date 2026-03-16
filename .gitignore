@@ -1,0 +1,63 @@
+### backend build (Maven&Gradle) ###
+target/
+*/target
+*.jar
+/.gradle/
+/build/
+/out/
+/tmp/
+
+### log ###
+logs
+*/app.log
+*/app-*.log
+*/db.log
+*/db-*.log
+*.log
+
+### IntelliJ IDEA ###
+.idea
+*/*.iml
+
+### VSCode ###
+.vscode
+
+### Cursor ###
+.cursor
+.cursorrule
+
+### Claude Code ###
+CLAUDE.md
+.claude/
+
+### PDManer ###
+*-backup*.json
+/sql/.back_*
+
+### MAC ###
+.DS_Store
+
+### Frontend ###
+dist
+node_modules
+tsconfig.tsbuildinfo
+*.tsbuildinfo
+components.d.ts
+
+
+/vendor/
+/vendor/bundle/
+/vendor/cache/
+/vendor/ruby/
+/vendor/ruby/2.3.0/cache/
+/vendor/ruby/2.3.0/gems/
+/vendor/ruby/2.3.0/specifications/
+/vendor/ruby/2.3.0/cache/
+/vendor/ruby/2.3.0/gems/
+/vendor/ruby/2.3.0/spec
+
+*/venv
+*/venv2
+*/*/venv
+*/*/venv2
+*.zip
