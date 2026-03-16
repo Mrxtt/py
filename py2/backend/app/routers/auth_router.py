@@ -8,14 +8,17 @@ from sqlalchemy.orm import Session
 
 from ..core.database import get_db
 from ..core.security import verify_password, get_password_hash, create_access_token
-from ..core.config import Settings
+from ..core.config import get_settings
 from ..models import User
 from ..models.enums import UserStatus
 from ..schemas.rbac import LoginRequest, LoginResponse, UserResponse
 from ..schemas.common import ApiResponse
 
+
 # 创建路由器
 router = APIRouter(prefix="/api/v1/auth", tags=["认证"])
+
+settings = get_settings()
 
 
 @router.post("/login", response_model=ApiResponse[LoginResponse], summary="用户登录")
@@ -54,7 +57,8 @@ async def login(login_data: LoginRequest, db: Session = Depends(get_db)):
     db.commit()
 
     # 生成访问令牌
-    access_token_expires = timedelta(minutes=Settings.ACCESS_TOKEN_EXPIRE_MINUTES)
+    print("生成访问令牌过-期时间配置" + str(settings.ACCESS_TOKEN_EXPIRE_MINUTES))
+    access_token_expires = timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES)
     access_token = create_access_token(
         data={"sub": str(user.id)}, expires_delta=access_token_expires
     )
