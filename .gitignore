@@ -61,3 +61,6 @@ components.d.ts
 */*/venv
 */*/venv2
 *.zip
+/*/*/*/__pycache__
+/py2/backend/app/__pycache__
+*.pyc
