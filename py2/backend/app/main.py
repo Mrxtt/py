@@ -9,6 +9,7 @@ from sqlalchemy.orm import Session
 from .core.config import Settings
 from .core.database import get_db
 from .routers import (
+    auth_router,
     menu_router,
     rbac_router,
     user_router,
@@ -40,6 +41,7 @@ app.add_middleware(
 
 # 注册路由
 # app.include_router(Settings)
+app.include_router(auth_router)
 app.include_router(menu_router)
 app.include_router(rbac_router)
 app.include_router(user_router)

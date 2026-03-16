@@ -21,7 +21,7 @@ settings = Settings()
 
 
 
-
+export PYTHONPATH=/Users/xutao/Downloads/py/py2/backend
 
 
 
